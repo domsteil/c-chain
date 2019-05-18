@@ -14,13 +14,14 @@ const items = useFetch("http://localhost:10050/api/getLedger");
                     <th column="3">Hash</th>
                     <th column="4">Key</th>
                     <th column="5">Policy</th>
+                    <th column="6">Expiration</th>
 
                 </tr>
             </thead>
             <tbody>
                 {items.map(i => (
                     <tr>{i.itemId}
-                    <td>{i.description}</td>
+                    <td>{i.message}</td>
                     <td>{i.contentType}</td>
                     <td>{i.hash}</td>
                     <td>{i.key}</td>
@@ -64,7 +65,7 @@ const items = useFetch("http://localhost:10050/api/getLedger");
         font-size: 14px;
         font-weight: 400;
         letter-spacing: 0px;
-        padding-left: 69px;
+        padding-left: 50px;
     }
 
     td {

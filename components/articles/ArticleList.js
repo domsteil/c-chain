@@ -8,8 +8,8 @@ const articles = useFetch("http://localhost:10050/api/getArticles");
             <table>
                 <thead>
                     <tr>
-                    <th column="0">Article Id</th>
-                    <th column="1">Description</th>
+                    <th column="0"></th>
+                    <th column="1"></th>
 
                 </tr>
             </thead>

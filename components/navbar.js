@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { withRouter } from 'next/router';
 import classNames from 'classnames';
 import IpfsApi from 'ipfs-api'
+import LogIn from '../components/LogIn';
 
 import { MediaQueryConsumer } from './media-query';
 
@@ -112,7 +113,7 @@ export default withRouter(({ isMobile, router }) => {
                 <div className="nav">
 
                 <Link>
-                  <a><button className="signIn" invert >Sign In</button></a>
+                  <a><button className="signIn" invert >LogIn</button></a>
                 </Link>
                 </div>
 

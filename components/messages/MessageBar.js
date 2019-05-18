@@ -43,12 +43,12 @@ return [res, (...args) => setReq(fn(...args))];
 
 }
 
-const chatAPI = "http://localhost:10050/api/sendMessage?to";
+const publisherAPI = "https://dapps.ngrok.io:3000/api/";
 
-function postChatEndpoint() {
+function postPublisherEndpoint() {
   
   return useAsyncEndpoint(data => ({
-  url: chatAPI,
+  url: publisherAPI,
   method: "POST",
   data
 }));
@@ -58,7 +58,7 @@ export default function MessageBar(props) {
   const [message, setMessage] = useState("");
   const [to, setTo] = useState("");
   const [who, setWho] = useState("");
-  const [newMessage, postNewMessage] = postChatEndpoint();
+  const [newMessage, postNewMessage] = postPublisherEndpoint();
 
   const handleKeyPress = (event) => {
   if(event.key == 'Enter'|| event.keyCode == 13) {

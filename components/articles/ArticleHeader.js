@@ -8,7 +8,7 @@ export default () =>
       h1 {
         font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
         margin: 10px 0;
-        font-size: 2em;
+        font-size: 1.7em;
         font-weight: 200;
         margin-right: 30px;
         padding-left: 5px;

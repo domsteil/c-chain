@@ -1,12 +1,13 @@
 import Page from '../components/page';
 import Head from 'next/head'
 import CChainDashboard from '../components/C-ChainDashboard';
-// import Fortmatic from 'fortmatic';
+import Fortmatic from 'fortmatic';
 import IpfsApi from 'ipfs-api'
 import Web3 from 'web3';
 import Navbar from '../components/navbar';
 import MessageBar from '../components/messages/MessageBar';
 import Footer from '../components/footer';
+
 
 
 // let fm = new Fortmatic('pk_test_F4970AF6BBC7F0C1');
@@ -50,7 +51,7 @@ export default () => (
 
 
 .main {
-  background-color: #a82de5;
+  background-color: #e6ecf0;
 }
   b {
     font-weight: normal;
@@ -63,7 +64,7 @@ export default () => (
       font-weight: 200;
       margin-right: 30px;
       padding-left: 5px;
-      color: #FFF;
+      color: #000;
       text-align: center;
     }
 
