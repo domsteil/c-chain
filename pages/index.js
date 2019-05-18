@@ -1,19 +1,48 @@
 import Page from '../components/page';
 import Head from 'next/head'
 import CChainDashboard from '../components/C-ChainDashboard';
+// import Fortmatic from 'fortmatic';
+import IpfsApi from 'ipfs-api'
+import Web3 from 'web3';
+import Navbar from '../components/navbar';
+import MessageBar from '../components/messages/MessageBar';
+import Footer from '../components/footer';
+
+
+// let fm = new Fortmatic('pk_test_F4970AF6BBC7F0C1');
+
+
+// IPFS Config Globals
+global.ipfs = ipfs;
+global.ipfsHost = 'localhost',
+global.ipfsAPIPort = '5001',
+global.ipfsWebPort = '8080',
+global.ipfsDataHost = "http://" + ipfsHost + ':' + ipfsWebPort + "/ipfs";
+
+
+var ipfs = IpfsApi(ipfsHost, ipfsAPIPort)
+      ipfs.swarm.peers(function(err, response) {
+         if (err) {
+          console.log("not connected to IPFS on AWS");
+         } else {
+         console.log("Connected to IPFS");
+           //console.log(response);
+        }
+      });
+
 
 
 export default () => (
     <Page title="">
 	<Head>
-      <title>C-Chain Dashboard</title>
+      <title>TripleCheck Dashboard</title>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <section className="main">
-      <h1>The C-Chain Dashboard</h1>
+      <Navbar />
+      <h1>Triple<b>Check</b></h1>
+      <MessageBar />
       <CChainDashboard />
-      <br/>
-      <br/>
       <br/>
       </section>
       <br/>
@@ -21,7 +50,7 @@ export default () => (
 
 
 .main {
-  background-color: #EFF6FF;
+  background-color: #a82de5;
 }
   b {
     font-weight: normal;
@@ -34,7 +63,7 @@ export default () => (
       font-weight: 200;
       margin-right: 30px;
       padding-left: 5px;
-      color: #000;
+      color: #FFF;
       text-align: center;
     }
 
@@ -61,6 +90,36 @@ from, to { border-color: transparent }
       color: #000;
       text-align: center;
     }
+
+    .policyButton {
+        -webkit-appearance: none;
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        text-transform: uppercase;
+        text-align: center;
+        line-height: 0;
+        white-space: nowrap;
+        width: 100px;
+        height: 30px;
+        font-weight: 500;
+        font-size: 12px;
+        color: rgb(102, 102, 102);
+        background-color: rgb(255, 255, 255);
+        user-select: none;
+        cursor: pointer;
+        text-decoration: none;
+        padding: 0px 10px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(234, 234, 234);
+        border-image: initial;
+        transition: all 0.2s ease 0s;
+        overflow: hidden;
+        outline: none;
+      }
 
     p {
       font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;

@@ -1,5 +1,6 @@
 import LedgerCard from './ledger/LedgerCard';
 import ArticleCard from './articles/ArticleCard';
+import UserCard from './users/UserCard';
 
 
 export default () =>
@@ -8,13 +9,10 @@ export default () =>
     <div className="column">
     <LedgerCard />
     </div>
-    <div className="column">
-    <ArticleCard />
-    </div>
       </div>
     <style jsx>{`
       .column {
-        text-align: left
+        text-align: center
       }
 
       .vertical {

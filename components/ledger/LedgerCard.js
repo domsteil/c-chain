@@ -29,8 +29,8 @@ export default () =>
         margin-left: 28px;
         margin-right: 28px;
         background-color: #FFFFFF;
-        width: 1000px;
-        height: 780px;
+        width: 900px;
+        height: 700px;
     }
 
       // CSS only media query for tablet

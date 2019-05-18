@@ -10,6 +10,10 @@ const items = useFetch("http://localhost:10050/api/getLedger");
                     <tr>
                     <th column="0">Ledger Id</th>
                     <th column="1">Description</th>
+                    <th column="2">Content Type</th>
+                    <th column="3">Hash</th>
+                    <th column="4">Key</th>
+                    <th column="5">Policy</th>
 
                 </tr>
             </thead>
@@ -17,6 +21,10 @@ const items = useFetch("http://localhost:10050/api/getLedger");
                 {items.map(i => (
                     <tr>{i.itemId}
                     <td>{i.description}</td>
+                    <td>{i.contentType}</td>
+                    <td>{i.hash}</td>
+                    <td>{i.key}</td>
+                    <td>{i.policy}</td>
 
                     </tr>
                 ))}
@@ -25,6 +33,12 @@ const items = useFetch("http://localhost:10050/api/getLedger");
             <style jsx>{`
       .column {
         text-align: left
+      }
+
+      .list-item-check {
+        background: url(/static/images/pricing_table_check.png) 2px 1px no-repeat;
+        padding-left: 50px;
+
       }
 
       .vertical {
@@ -50,7 +64,7 @@ const items = useFetch("http://localhost:10050/api/getLedger");
         font-size: 14px;
         font-weight: 400;
         letter-spacing: 0px;
-        padding-left: 28px;
+        padding-left: 69px;
     }
 
     td {
