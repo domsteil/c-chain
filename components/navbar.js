@@ -7,6 +7,7 @@ import { MediaQueryConsumer } from './media-query';
 import Container from './container';
 
 var web3;
+var address;
 let fm = new Fortmatic('pk_test_F4970AF6BBC7F0C1');
 
 if (process.browser) {
@@ -101,6 +102,10 @@ export default withRouter(({ isMobile, router }) => {
     margin-left: 10px;
 }
 
+b {
+  font-weight: normal;
+}
+
             nav {
                     position: relative;
                     flex: 1;
@@ -124,7 +129,7 @@ export default withRouter(({ isMobile, router }) => {
                   <a><button onClick={handleLogin} className="signIn" invert >LogIn</button></a>
                 </div>
 
-                <p><b className="connected"></b></p>
+                <p><b className="connected"></b>{address}</p>
                 <p><strong></strong></p>
             </nav>
           </Container>

@@ -1,7 +1,7 @@
 {
-  "name": "c-chain",
+  "name": "triplecheck",
   "version": "1.0.0",
-  "description": "c-suite chain for data origination",
+  "description": "origination and verification",
   "main": "index.js",
   "scripts": {
     "dev": "node server.js",
@@ -13,6 +13,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "classnames": "^2.2.6",
+    "ethereumjs-util": "^6.1.0",
     "fortmatic": "^0.7.2",
     "http-proxy": "^1.17.0",
     "ipfs-api": "^26.1.2",
@@ -21,7 +22,8 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "^7.0.3",
-    "web3": "^1.0.0-beta.55"
+    "web3": "^1.0.0-beta.55",
+    "web3-react": "next"
   },
   "plugins": [
     "react",

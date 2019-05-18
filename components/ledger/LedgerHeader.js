@@ -1,3 +1,14 @@
+import Link from 'next/link';
+import { withRouter } from 'next/router';
+import classNames from 'classnames';
+import Fortmatic from 'fortmatic';
+import Web3 from 'web3';
+
+const ethUtil = require('ethereumjs-util'); // Required to convert message to Hex
+const msg = ethUtil.bufferToHex(new Buffer('ANY STRING', 'utf8'));
+
+let verifyData;
+
 export default () => 
 <section>
     <div className="actions">
@@ -25,7 +36,7 @@ export default () =>
         text-align: center;
         line-height: 0;
         white-space: nowrap;
-        width: 100px;
+        width: 120px;
         height: 30px;
         font-weight: 500;
         font-size: 12px;

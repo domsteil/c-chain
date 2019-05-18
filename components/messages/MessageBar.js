@@ -2,6 +2,9 @@ import React, { useState, useEffect, useRef } from "react";
 import axios from 'axios';
 import { deflateSync } from 'zlib';
 
+var state;
+var captureFile;
+
 
 function useAsyncEndpoint(fn) {
   const [res, setRes] = useState({
@@ -11,6 +14,24 @@ function useAsyncEndpoint(fn) {
     error: false,
   });
   const [req, setReq] = useState();
+
+  state = {
+    ipfsHash:null,
+    buffer:'',
+    ethAddress:'',
+    transactionHash:'',
+    txReceipt: ''
+  };
+
+//Take file input from user
+ captureFile =(event) => {
+      event.stopPropagation()
+      event.preventDefault()
+      const file = event.target.files[0]
+      let reader = new window.FileReader()
+      reader.readAsArrayBuffer(file)
+      reader.onloadend = () => this.convertToBuffer(reader)
+    };
   
   useEffect(() => {
     if (!req) return;
@@ -43,6 +64,7 @@ return [res, (...args) => setReq(fn(...args))];
 
 }
 
+let verifyData;
 const publisherAPI = "https://dapps.ngrok.io:3000/api/";
 
 function postPublisherEndpoint() {
@@ -77,8 +99,19 @@ return (
     <section>
     <div className="row">
         <div className="column">
+        <form id="ipfs-hash-form">
+        <input className="ipfsInput"
+        type = "file"
+      
+        />
+        <button className="policyButton"
+        type="submit"> 
+        Upload
+        </button>
+        </form>
         <br/>
-        <input className="message-box" value={message} onChange={e => setMessage(e.target.value)} onKeyPress={handleKeyPress} />
+        <input className="message-box" value={message} onChange={e => setMessage(e.target.value)} onKeyPress={handleKeyPress}  /> 
+        <a><button onClick={verifyData} className="policyButton" invert >Verify</button><img className="center" src="../static/verification.png" height="28" width="28" align="middle" alt=""/></a>
         </div>
         
         </div>
@@ -93,6 +126,11 @@ return (
         margin-right: 28px;
       }
 
+      .center {
+        margin-left: 3px;
+        margin-bottom: 10px;
+      }
+
       .to {
         width: 260px;
         padding-bottom: 8px;
@@ -105,6 +143,69 @@ return (
         min-height: auto; 
         padding-left: 0; 
         padding-right: 0;
+      }
+
+      .policyButton {
+        -webkit-appearance: none;
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        text-transform: uppercase;
+        text-align: center;
+        line-height: 0;
+        white-space: nowrap;
+        width: 120px;
+        height: 30px;
+        margin-left: 8px;
+        font-weight: 500;
+        font-size: 12px;
+        color: rgb(102, 102, 102);
+        background-color: rgb(255, 255, 255);
+        user-select: none;
+        cursor: pointer;
+        text-decoration: none;
+        padding: 0px 10px;
+        margin-bottom: 2px;
+        border-radius: 5px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(234, 234, 234);
+        border-image: initial;
+        transition: all 0.2s ease 0s;
+        overflow: hidden;
+        outline: none;
+      }
+
+      
+      .ipfsInput {
+        -webkit-appearance: none;
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        text-transform: uppercase;
+        text-align: center;
+        line-height: 0;
+        white-space: nowrap;
+        width: 300px;
+        height: 30px;
+        margin-left: 8px;
+        font-weight: 500;
+        font-size: 12px;
+        color: #000;
+        user-select: none;
+        cursor: pointer;
+        text-decoration: none;
+        padding: 0px 10px;
+        margin-bottom: 2px;
+        border-radius: 5px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(234, 234, 234);
+        border-image: initial;
+        transition: all 0.2s ease 0s;
+        overflow: hidden;
+        outline: none;
+        
       }
 
       .message-box {

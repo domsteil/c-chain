@@ -38,7 +38,7 @@ const items = useFetch("http://localhost:10050/api/getLedger");
       }
 
       .list-item-check {
-        background: url(/static/images/pricing_table_check.png) 2px 1px no-repeat;
+        background: url(/static/verification.png) 2px 1px no-repeat;
         padding-left: 50px;
 
       }
