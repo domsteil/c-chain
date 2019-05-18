@@ -78,7 +78,7 @@ return (
     <div className="row">
         <div className="column">
         <br/>
-        <input className="message-box" value={message} onChange={e => setMessage(e.target.value)} onKeyPress={handleKeyPress} />
+        <input defaultValue="IPFS Hashlink" className="message-box" value={message} onChange={e => setMessage(e.target.value)} onKeyPress={handleKeyPress} />
         </div>
         
         </div>

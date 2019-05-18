@@ -3,10 +3,12 @@ import { withRouter } from 'next/router';
 import classNames from 'classnames';
 import IpfsApi from 'ipfs-api'
 import LogIn from '../components/LogIn';
-
+import Fortmatic from 'fortmatic';
+import Web3 from 'web3';
 import { MediaQueryConsumer } from './media-query';
 
 import Container from './container';
+import { isContext } from 'vm';
 
 // IPFS Config Globals
 global.ipfs = ipfs;
@@ -14,6 +16,11 @@ global.ipfsHost = 'localhost',
 global.ipfsAPIPort = '5001',
 global.ipfsWebPort = '8080',
 global.ipfsDataHost = "http://" + ipfsHost + ':' + ipfsWebPort + "/ipfs";
+
+let fm = new Fortmatic('pk_test_F4970AF6BBC7F0C1');
+if (process.browser) {
+  web3 = new Web3(fm.getProvider());
+}
 
 
 var ipfs = IpfsApi(ipfsHost, ipfsAPIPort)
@@ -25,6 +32,22 @@ var ipfs = IpfsApi(ipfsHost, ipfsAPIPort)
            //console.log(response);
         }
       });
+
+      let setUserInfo = async () => {
+        web3.eth.getAccounts((err, accounts) => {
+          if (err) throw err;
+          let address = accounts[0];
+          console.log(address);
+        });
+      };
+
+      let handleLogin = async () => {
+        // Authenticate user
+        let accounts = await fm.user.login();
+        if (accounts.length > 0) {
+          setUserInfo();
+        }
+      };
 
 
 export default withRouter(({ isMobile, router }) => {
@@ -113,7 +136,7 @@ export default withRouter(({ isMobile, router }) => {
                 <div className="nav">
 
                 <Link>
-                  <a><button className="signIn" invert >LogIn</button></a>
+                  <a><button onClick={handleLogin} className="signIn" invert >LogIn</button></a>
                 </Link>
                 </div>
 

@@ -42,6 +42,7 @@ export default () => (
       <section className="main">
       <Navbar />
       <h1>Triple<b>Check</b></h1>
+      <h4>Origination and Verification using proxy re-encryption</h4>
       <MessageBar />
       <CChainDashboard />
       <br/>
@@ -51,7 +52,7 @@ export default () => (
 
 
 .main {
-  background-color: #e6ecf0;
+  background-color: #ac10ef;
 }
   b {
     font-weight: normal;
@@ -64,7 +65,18 @@ export default () => (
       font-weight: 200;
       margin-right: 30px;
       padding-left: 5px;
-      color: #000;
+      color: #FFF;
+      text-align: center;
+    }
+
+    h4 {
+      font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+      margin: 10px 0;
+      font-size: 16px;
+      font-weight: normal;
+      margin-right: 30px;
+      padding-left: 5px;
+      color: #FFF;
       text-align: center;
     }
 
@@ -81,14 +93,14 @@ from, to { border-color: transparent }
 50% { border-color: orange; }
 }
 
-      h2 {
+      h4 {
       font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
       margin: 10px 0;
-      font-size: 24px;
+      font-size: 16px;
       font-weight: normal;
       margin-right: 30px;
       padding-left: 5px;
-      color: #000;
+      color: #FFF;
       text-align: center;
     }
 
