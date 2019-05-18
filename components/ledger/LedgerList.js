@@ -26,6 +26,7 @@ const items = useFetch("http://localhost:10050/api/getLedger");
                     <td>{i.hash}</td>
                     <td>{i.key}</td>
                     <td>{i.policy}</td>
+                    <td>{i.expiration}</td>
 
                     </tr>
                 ))}

@@ -9,29 +9,10 @@ import MessageBar from '../components/messages/MessageBar';
 import Footer from '../components/footer';
 
 
-
-// let fm = new Fortmatic('pk_test_F4970AF6BBC7F0C1');
-
-
-// IPFS Config Globals
-global.ipfs = ipfs;
-global.ipfsHost = 'localhost',
-global.ipfsAPIPort = '5001',
-global.ipfsWebPort = '8080',
-global.ipfsDataHost = "http://" + ipfsHost + ':' + ipfsWebPort + "/ipfs";
-
-
-var ipfs = IpfsApi(ipfsHost, ipfsAPIPort)
-      ipfs.swarm.peers(function(err, response) {
-         if (err) {
-          console.log("not connected to IPFS on AWS");
-         } else {
-         console.log("Connected to IPFS");
-           //console.log(response);
-        }
-      });
-
-
+let fm = new Fortmatic('pk_test_F4970AF6BBC7F0C1');
+if (process.browser) {
+  web3 = new Web3(fm.getProvider());
+}
 
 export default () => (
     <Page title="">
@@ -42,7 +23,7 @@ export default () => (
       <section className="main">
       <Navbar />
       <h1>Triple<b>Check</b></h1>
-      <h4>Origination and Verification using proxy re-encryption</h4>
+      <h4>Digital Origination and Verification using proxy re-encryption</h4>
       <MessageBar />
       <CChainDashboard />
       <br/>
@@ -52,7 +33,7 @@ export default () => (
 
 
 .main {
-  background-color: #ac10ef;
+  background-color: #7F39FB;
 }
   b {
     font-weight: normal;

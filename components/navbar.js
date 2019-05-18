@@ -1,37 +1,17 @@
 import Link from 'next/link';
 import { withRouter } from 'next/router';
 import classNames from 'classnames';
-import IpfsApi from 'ipfs-api'
-import LogIn from '../components/LogIn';
 import Fortmatic from 'fortmatic';
 import Web3 from 'web3';
 import { MediaQueryConsumer } from './media-query';
-
 import Container from './container';
-import { isContext } from 'vm';
 
-// IPFS Config Globals
-global.ipfs = ipfs;
-global.ipfsHost = 'localhost',
-global.ipfsAPIPort = '5001',
-global.ipfsWebPort = '8080',
-global.ipfsDataHost = "http://" + ipfsHost + ':' + ipfsWebPort + "/ipfs";
 
 let fm = new Fortmatic('pk_test_F4970AF6BBC7F0C1');
+
 if (process.browser) {
   web3 = new Web3(fm.getProvider());
 }
-
-
-var ipfs = IpfsApi(ipfsHost, ipfsAPIPort)
-      ipfs.swarm.peers(function(err, response) {
-         if (err) {
-          console.log("not connected to IPFS on AWS");
-         } else {
-         console.log("Connected to IPFS");
-           //console.log(response);
-        }
-      });
 
       let setUserInfo = async () => {
         web3.eth.getAccounts((err, accounts) => {
@@ -134,14 +114,11 @@ export default withRouter(({ isMobile, router }) => {
               </style>
 
                 <div className="nav">
-
-                <Link>
                   <a><button onClick={handleLogin} className="signIn" invert >LogIn</button></a>
-                </Link>
                 </div>
 
                 <p><b className="connected"></b></p>
-                <p><strong>{ipfs.id}</strong></p>
+                <p><strong></strong></p>
             </nav>
           </Container>
         );

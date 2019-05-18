@@ -78,7 +78,7 @@ return (
     <div className="row">
         <div className="column">
         <br/>
-        <input defaultValue="IPFS Hashlink" className="message-box" value={message} onChange={e => setMessage(e.target.value)} onKeyPress={handleKeyPress} />
+        <input className="message-box" value={message} onChange={e => setMessage(e.target.value)} onKeyPress={handleKeyPress} />
         </div>
         
         </div>
@@ -109,7 +109,7 @@ return (
 
       .message-box {
         padding-bottom: 28px;
-        width: 1070px ;
+        width: 800px ;
         overflow: auto;
         margin: 0; 
         min-height: 42px; 

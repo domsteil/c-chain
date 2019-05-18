@@ -12,12 +12,12 @@ RouterEvents.on('routeChangeComplete', url => {
 export default withMediaQuery(({ title, description, children }) => (
   <div>
     <Head>
-      <title>{title || 'C-Chain Network Dashboard'}</title>
+      <title>{title || 'TripleCheck Network'}</title>
       <meta
         name="description"
         content={
           description ||
-          'C-Chain Network is for C-Levels to securely message.'
+          'TripleCheck it.'
         }
       />
     </Head>

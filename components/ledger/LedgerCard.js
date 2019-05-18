@@ -1,8 +1,6 @@
 import Container from '../container'
-import LedgerDetail from './LedgerDetail';
 import LedgerHeader from './LedgerHeader';
 import LedgerList from './LedgerList';
-import useFetch from '../../components/useFetch';
 
 
 export default () =>
@@ -30,7 +28,7 @@ export default () =>
         margin-right: 28px;
         background-color: #FFFFFF;
         width: 900px;
-        height: 700px;
+        height: 650px;
     }
 
       // CSS only media query for tablet
@@ -45,6 +43,7 @@ export default () =>
           text-align: center;
           max-width: 350px;
         }
+        
 
         
 .archetype-form__container {
