@@ -1,21 +1,21 @@
 import Container from '../container'
-import LedgerDetail from './LedgerDetail';
-import LedgerHeader from './LedgerHeader';
-import LedgerList from './LedgerList';
+import ArticleDetail from './ArticleDetail';
+import ArticleHeader from './ArticleHeader';
+import ArticleList from './ArticleList';
 import useFetch from '../../components/useFetch';
 
 
 export default () =>
 <Container center>
 <section>
-    <div className="ledgerCard">
+    <div className="articleCard">
     
-    <LedgerHeader />
-    <LedgerList />
+    <ArticleHeader />
+    <ArticleList />
       </div>
     <style jsx>{`
 
-      .ledgerCard {
+      .articleCard {
         background: #fff;
         border-radius: 5px;
         box-shadow: 0 8px 28px 0 rgba(86,91,115,.15);

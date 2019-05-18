@@ -1,16 +1,9 @@
-import LedgerCard from './ledger/LedgerCard';
-import ArticleCard from './articles/ArticleCard';
+import ArticleList from "./ArticleList";
 
-
-export default () =>
+export default () => 
 <section>
-<div className="row">
-    <div className="column">
-    <LedgerCard />
-    </div>
-    <div className="column">
-    <ArticleCard />
-    </div>
+    <div>
+      <ArticleList />
       </div>
     <style jsx>{`
       .column {
@@ -21,6 +14,32 @@ export default () =>
         align-left: 30px;
         height: 1200px;
       }
+
+      .signup {
+        font-size: 13px;
+        line-height: 1.91667;
+        font-weight: 400;
+        color: #3d464d;
+        border: 1px solid #bdc4c9;
+        padding: 3.5px 7px;
+        border-radius: 4px;
+        margin-top: 28px;
+        width: 69%;
+        margin-left: 8px;
+      }
+
+
+      h2 {
+        font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+        margin: 10px 0;
+        font-size: 24px;
+        font-weight: normal;
+        margin-right: 30px;
+        padding-left: 5px;
+        color: #000;
+        text-align: center;
+      }
+
 
      .col-left {
         box-sizing: border-box;
