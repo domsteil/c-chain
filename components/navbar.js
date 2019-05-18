@@ -6,7 +6,7 @@ import Web3 from 'web3';
 import { MediaQueryConsumer } from './media-query';
 import Container from './container';
 
-
+var web3;
 let fm = new Fortmatic('pk_test_F4970AF6BBC7F0C1');
 
 if (process.browser) {
@@ -27,6 +27,13 @@ if (process.browser) {
         if (accounts.length > 0) {
           setUserInfo();
         }
+      };
+
+      let handleSendTransaction = () => {
+        fm.transactions.send((err, txnHash) => {
+          if (err) throw err;
+          setUserInfo();
+        });
       };
 
 
