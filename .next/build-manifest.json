@@ -1,27 +1,49 @@
 {
-  "devFiles": [
-    "static/development/dll/dll_2011977376de5c4d4cfb.js"
-  ],
+  "devFiles": [],
   "pages": {
     "/": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
+      "static/runtime/webpack-a79426b5e11f0ba5879d.js",
+      "static/chunks/commons.f9000f5540d687e6bbb1.js",
+      "static/runtime/main-fd73dbd6f398b7b886ec.js"
     ],
     "/_app": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
+      "static/runtime/webpack-a79426b5e11f0ba5879d.js",
+      "static/chunks/commons.f9000f5540d687e6bbb1.js",
+      "static/runtime/main-fd73dbd6f398b7b886ec.js"
     ],
     "/_error": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
+      "static/runtime/webpack-a79426b5e11f0ba5879d.js",
+      "static/chunks/commons.f9000f5540d687e6bbb1.js",
+      "static/runtime/main-fd73dbd6f398b7b886ec.js"
+    ],
+    "/articles": [
+      "static/runtime/webpack-a79426b5e11f0ba5879d.js",
+      "static/runtime/main-fd73dbd6f398b7b886ec.js"
     ],
     "/encrypted": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
+      "static/runtime/webpack-a79426b5e11f0ba5879d.js",
+      "static/chunks/commons.f9000f5540d687e6bbb1.js",
+      "static/runtime/main-fd73dbd6f398b7b886ec.js"
+    ],
+    "/explorer": [
+      "static/runtime/webpack-a79426b5e11f0ba5879d.js",
+      "static/chunks/commons.f9000f5540d687e6bbb1.js",
+      "static/runtime/main-fd73dbd6f398b7b886ec.js"
     ],
     "/index": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
+      "static/runtime/webpack-a79426b5e11f0ba5879d.js",
+      "static/chunks/commons.f9000f5540d687e6bbb1.js",
+      "static/runtime/main-fd73dbd6f398b7b886ec.js"
+    ],
+    "/policies": [
+      "static/runtime/webpack-a79426b5e11f0ba5879d.js",
+      "static/chunks/commons.f9000f5540d687e6bbb1.js",
+      "static/runtime/main-fd73dbd6f398b7b886ec.js"
+    ],
+    "/verify": [
+      "static/runtime/webpack-a79426b5e11f0ba5879d.js",
+      "static/chunks/commons.f9000f5540d687e6bbb1.js",
+      "static/runtime/main-fd73dbd6f398b7b886ec.js"
     ]
   }
 }

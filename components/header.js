@@ -35,7 +35,7 @@ export default () => (
       .headerItems {
         padding-bottom: 8px;
         margin-bottom: 8px;
-        margin-left: 650px;
+        margin-left: 700px;
       }
 
 

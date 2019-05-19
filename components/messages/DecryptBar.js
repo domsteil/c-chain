@@ -77,7 +77,7 @@ let handlePersonalSign = (e) => {
 };
 
 
-const decryptAPI = "http://ec2-18-204-34-34.compute-1.amazonaws.com:5000/decrypt/102981230912";
+const decryptAPI = "http://ec2-18-204-34-34.compute-1.amazonaws.com:5000/decrypt/";
 
 function decryptData() {
   
@@ -90,7 +90,7 @@ function decryptData() {
 
 export default function DecryptBar(props) {
   const [password, setPassword] = useState("Public Key for re-encryption");
-  const [hash, setHash] = useState("")
+  const [hash, setHash] = useState("Hash")
 
   const handleKeyPress = (event) => {
   if(event.key == 'Enter'|| event.keyCode == 13) {
@@ -117,6 +117,10 @@ return (
         
         </form>
         
+        <br/>
+        <br/>
+        <input className="message-box" type="text" value={hash} onChange={e => setHash(e.target.value)} onKeyPress={handleKeyPress}  /> 
+        <br/>
         <br/>
         <input className="message-box" type="password" value={password} onChange={e => setPassword(e.target.value)} onKeyPress={handleKeyPress}  /> 
         <a><button onClick={decryptData} className="policyButton" invert >Decrypt</button><img className="center" src="../static/verification.png" height="28" width="28" align="middle" alt=""/></a>

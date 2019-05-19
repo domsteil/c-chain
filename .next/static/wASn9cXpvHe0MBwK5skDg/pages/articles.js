@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([["b3f9"],{hDBf:function(n,o,w){(window.__NEXT_P=window.__NEXT_P||[]).push(["/articles",function(){var n=w("yRol");return{page:n.default||n}}])},yRol:function(n,o){}},[["hDBf","5d41"]]]);

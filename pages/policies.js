@@ -7,7 +7,6 @@ import Web3 from 'web3';
 import Navbar from '../components/navbar';
 import MessageBar from '../components/messages/MessageBar';
 import Footer from '../components/footer';
-import Storage from '../components/storage';
 import PolicyCard from '../components/policies/PolicyCard';
 
 

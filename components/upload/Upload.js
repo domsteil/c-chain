@@ -146,8 +146,8 @@ class Upload extends Component {
         </div>
         <div className="Actions">{this.renderActions()}</div>
 
-        <form id="policy">
-        <select className="policyDropdown" onSelect={() => this.setState({ policy: [], successfullUploaded: false })} >
+        <form>
+        <select id="policy" className="policyDropdown" onSelect={() => this.setState({ policy: [], successfullUploaded: false })} >
           <option value="policy1">Policy 1</option>
           <option value="policy2">Policy 2</option>
         </select>
