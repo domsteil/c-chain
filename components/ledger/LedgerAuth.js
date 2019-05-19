@@ -1,13 +1,14 @@
 import Container from '../container'
 import LedgerHeader from './LedgerHeader';
 import LedgerList from './LedgerList';
+import DecryptCard from './DecryptCard';
 
 
 export default () =>
 <Container center>
 <section>
     <div className="ledgerCard">
-    
+    <DecryptCard />
       </div>
     <style jsx>{`
 

@@ -5,7 +5,7 @@ import Fortmatic from 'fortmatic';
 import IpfsApi from '../components/ipfs'
 import Web3 from 'web3';
 import Navbar from '../components/navbar';
-import MessageBar from '../components/messages/MessageBar';
+import DecryptBar from '../components/messages/DecryptBar';
 import Footer from '../components/footer';
 import Storage from '../components/storage';
 import Header from '../components/header';
@@ -30,7 +30,7 @@ export default () => (
       <h1>Triple<b>Check</b></h1>
       <h4>Digital Privacy, Origination and Verification</h4>
       <Header />
-      <MessageBar />
+      <DecryptBar />
       <LedgerAuth/>
       <br/>
       </section>

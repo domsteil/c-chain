@@ -119,6 +119,7 @@ let handlePersonalSign = (e) => {
     }, (err, result) => {
       if (err) return console.error(err);
       if (result.error) return console.error(result.error);
+      postPublisherEndpoint();
       console.log(result);
     })
   });
@@ -154,13 +155,18 @@ return (
     <div className="row">
         <div className="column">
         <form id="ipfs-hash-form">
+        <select className="policyDropdown">
+          <option value="policy-1">Policy-1</option>
+          <option value="policy-2">Policy-2</option>
+        </select>
         <input className="ipfsInput"
         type = "file"
       
         />
-        <button className="policyButton" onClick="upload"> 
+        <button className="policyButton" onClick="uploadFile"> 
         Upload
         </button><img className="center" src="../static/verification.png" height="28" width="28" align="middle" alt=""/>
+        
         </form>
         
         <br/>
@@ -202,6 +208,35 @@ return (
       .policyButton {
         -webkit-appearance: none;
         position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        text-transform: uppercase;
+        text-align: center;
+        line-height: 0;
+        white-space: nowrap;
+        width: 120px;
+        height: 30px;
+        margin-left: 8px;
+        font-weight: 500;
+        font-size: 12px;
+        color: rgb(102, 102, 102);
+        background-color: rgb(255, 255, 255);
+        user-select: none;
+        cursor: pointer;
+        text-decoration: none;
+        padding: 0px 10px;
+        margin-bottom: 2px;
+        border-radius: 5px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(234, 234, 234);
+        border-image: initial;
+        transition: all 0.2s ease 0s;
+        overflow: hidden;
+        outline: none;
+      }
+
+      .policyDropdown {
         display: inline-block;
         vertical-align: middle;
         text-transform: uppercase;

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import useFetch from "../../components/useFetch";
 
 export default function LedgerList(props) {
-const items = useFetch("http://ec2-18-204-34-34.compute-1.amazonaws.com:5000/encryptedFiles");
+const items = useFetch("http://ec2-18-204-34-34.compute-1.amazonaws.com:5000/listEncryptedFiles");
   
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);

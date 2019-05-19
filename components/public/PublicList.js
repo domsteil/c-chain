@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import useFetch from "../../components/useFetch";
 
 export default function PublicList(props) {
-const items = useFetch("http://ec2-18-204-34-34.compute-1.amazonaws.com:5000/upload");
+const items = useFetch("http://ec2-18-204-34-34.compute-1.amazonaws.com:5000/listPublicFiles");
   
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -35,25 +35,17 @@ const items = useFetch("http://ec2-18-204-34-34.compute-1.amazonaws.com:5000/upl
             <table>
                 <thead>
                     <tr>
-                    <th column="0">Ledger Id</th>
-                    <th column="1">Description</th>
-                    <th column="2">Content Type</th>
-                    <th column="3">Hash</th>
-                    <th column="4">Key</th>
-                    <th column="5">Policy</th>
-                    <th column="6">Expiration</th>
+                    <th column="0">IPFS CID</th>
+                    <th column="1">Proxy Link</th>
+                    <th columnn="2">Public Key</th>
 
                 </tr>
             </thead>
             <tbody>
                 {items.map(i => (
-                    <tr>{i.itemId}
-                    <td>{i.message}</td>
-                    <td>{i.contentType}</td>
-                    <td>{i.hash}</td>
-                    <td>{i.key}</td>
-                    <td>{i.policy}</td>
-                    <td>{i.expiration}</td>
+                    <tr>{i.CId}
+                    <td>{i.proxyLink}</td>
+                    <td>{i.publicKey}</td>
 
                     </tr>
                 ))}
