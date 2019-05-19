@@ -16,21 +16,13 @@ export default () =>
     <style jsx>{`
 
       .userCard {
-        background: #fff;
-        border-radius: 5px;
-        box-shadow: 0 8px 28px 0 rgba(86,91,115,.15);
-        position: center;
-        text-align: center;
-        box-sizing: border-box;
-        align: center;
-        padding-left: 28px;
-        padding-right: 28px;
-        margin-top: 28px;
-        margin-left: 28px;
-        margin-right: 28px;
-        background-color: #FFFFFF;
-        width: 1000px;
-        height: 780px;
+          min-height: 184px;
+          margin-bottom: 10px;
+          box-shadow: rgba(0, 0, 0, 0.12) 0px 4px 4px;
+          padding: 30px;
+          border-radius: 8px;
+          background: rgb(255, 255, 255);
+      
     }
 
       // CSS only media query for tablet

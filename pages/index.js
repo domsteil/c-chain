@@ -8,6 +8,7 @@ import Navbar from '../components/navbar';
 import MessageBar from '../components/messages/MessageBar';
 import Footer from '../components/footer';
 import Storage from '../components/storage';
+import Header from '../components/header';
 
 
 var web3;
@@ -26,7 +27,8 @@ export default () => (
       <section className="main">
       <Navbar />
       <h1>Triple<b>Check</b></h1>
-      <h4>Digital Origination and Verification using proxy re-encryption</h4>
+      <h4>Digital Privacy, Origination and Verification</h4>
+      <Header />
       <MessageBar />
       <CChainDashboard />
       <br/>
@@ -36,7 +38,7 @@ export default () => (
 
 
 .main {
-  background-color: #7F39FB;
+  background-color: #000;
 }
   b {
     font-weight: normal;

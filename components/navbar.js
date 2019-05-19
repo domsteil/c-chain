@@ -5,6 +5,7 @@ import Fortmatic from 'fortmatic';
 import Web3 from 'web3';
 import { MediaQueryConsumer } from './media-query';
 import Container from './container';
+import Header from '../components/header';
 
 var web3;
 var address;
@@ -29,6 +30,7 @@ if (process.browser) {
           setUserInfo();
         }
       };
+      
 
       let handleSendTransaction = () => {
         fm.transactions.send((err, txnHash) => {
@@ -92,6 +94,23 @@ export default withRouter(({ isMobile, router }) => {
   outline: none;
 }
 
+a {
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+  font-size: 11px;
+  margin-right: 30px;
+  padding-right: 70px;
+  margin-right: 8px;
+  color: #999;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.headerItems {
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+  padding-right: 300px;
+}
+
 .connected {
     content: '';
     width: 8px;
@@ -124,7 +143,6 @@ b {
                   }
                 `}
               </style>
-
                 <div className="nav">
                   <a><button onClick={handleLogin} className="signIn" invert >LogIn</button></a>
                 </div>

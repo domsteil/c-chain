@@ -1,9 +1,22 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from 'axios';
 import { deflateSync } from 'zlib';
+import Web3 from 'web3';
+import Fortmatic from 'fortmatic';
+import useUrsula from "../useUrsula";
 
+var web3;
 var state;
 var captureFile;
+var onSubmit;
+var uploadFile;
+
+var address;
+let fm = new Fortmatic('pk_test_F4970AF6BBC7F0C1');
+
+if (process.browser) {
+  web3 = new Web3(fm.getProvider());
+}
 
 
 function useAsyncEndpoint(fn) {
@@ -31,6 +44,26 @@ function useAsyncEndpoint(fn) {
       let reader = new window.FileReader()
       reader.readAsArrayBuffer(file)
       reader.onloadend = () => this.convertToBuffer(reader)
+    };
+
+
+uploadFile = useUrsula("http://ec2-18-204-34-34.compute-1.amazonaws.com:5000/upload");
+
+onSubmit = async (event) => {
+      event.preventDefault();
+      const accounts = await web3.eth.getAccounts();
+    //save document to IPFS,return its hash#, and set hash# to state
+      await ipfs.add(this.state.buffer, (err, ipfsHash) => {
+        console.log(err,ipfsHash);
+        //setState by setting ipfsHash to ipfsHash[0].hash
+        this.setState({ ipfsHash:ipfsHash[0].hash });
+        storehash.methods.sendHash(this.state.ipfsHash).send({
+          from: accounts[0]
+        }, (error, transactionHash) => {
+          console.log(transactionHash);
+          this.setState({transactionHash});
+        });
+      })
     };
   
   useEffect(() => {
@@ -65,7 +98,30 @@ return [res, (...args) => setReq(fn(...args))];
 }
 
 let verifyData;
-const publisherAPI = "https://dapps.ngrok.io:3000/api/";
+
+let handlePersonalSign = (e) => {
+  let message = message;
+  web3.eth.getAccounts((err, accounts) => {
+    if (err) return console.error(err);
+    var from = accounts[0];
+    var params = [message, from];
+    var method = 'personal_sign';
+    web3.currentProvider.sendAsync({
+      id: 1,
+      method,
+      params,
+      from,
+    }, (err, result) => {
+      if (err) return console.error(err);
+      if (result.error) return console.error(result.error);
+      console.log(result);
+    })
+  });
+};
+
+
+
+const publisherAPI = "http://ec2-18-204-34-34.compute-1.amazonaws.com:5000/upload";
 
 function postPublisherEndpoint() {
   
@@ -84,16 +140,9 @@ export default function MessageBar(props) {
 
   const handleKeyPress = (event) => {
   if(event.key == 'Enter'|| event.keyCode == 13) {
-    sendChat();
+    handlePersonalSign();
   }
 }
-
-    function sendChat() {
-      postNewMessage({
-        to,
-        message
-      });
-    }
 
 return (
     <section>
@@ -104,11 +153,11 @@ return (
         type = "file"
       
         />
-        <button className="policyButton"
-        type="submit"> 
+        <button className="policyButton" onClick="upload"> 
         Upload
-        </button>
+        </button><img className="center" src="../static/verification.png" height="28" width="28" align="middle" alt=""/>
         </form>
+        
         <br/>
         <input className="message-box" value={message} onChange={e => setMessage(e.target.value)} onKeyPress={handleKeyPress}  /> 
         <a><button onClick={verifyData} className="policyButton" invert >Verify</button><img className="center" src="../static/verification.png" height="28" width="28" align="middle" alt=""/></a>

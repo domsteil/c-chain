@@ -3,6 +3,16 @@ import { withRouter } from 'next/router';
 import classNames from 'classnames';
 import Fortmatic from 'fortmatic';
 import Web3 from 'web3';
+import ipfs from '../../components/ipfs';
+
+var web3;
+var address;
+let fm = new Fortmatic('pk_test_F4970AF6BBC7F0C1');
+
+if (process.browser) {
+  web3 = new Web3(fm.getProvider());
+}
+
 
 const ethUtil = require('ethereumjs-util'); // Required to convert message to Hex
 const msg = ethUtil.bufferToHex(new Buffer('ANY STRING', 'utf8'));
@@ -12,7 +22,7 @@ let verifyData;
 export default () => 
 <section>
     <div className="actions">
-    <h1>Encrypted Ledger Data</h1>
+    <h1>Your Encrypted Files:</h1>
       </div>
     <style jsx>{`
 

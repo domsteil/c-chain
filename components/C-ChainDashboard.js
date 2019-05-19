@@ -1,13 +1,11 @@
-import LedgerCard from './ledger/LedgerCard';
-import ArticleCard from './articles/ArticleCard';
-import UserCard from './users/UserCard';
+import ExplorerCard from './explorer/ExplorerCard';
 
 
 export default () =>
 <section>
 <div className="row">
     <div className="column">
-    <LedgerCard />
+    <ExplorerCard />
     </div>
       </div>
     <style jsx>{`

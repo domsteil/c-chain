@@ -2,31 +2,54 @@ import React, { useEffect, useState } from 'react';
 import useFetch from "../../components/useFetch";
 
 export default function LedgerList(props) {
-const items = useFetch("http://localhost:10050/api/getLedger");
+const items = useFetch("http://ec2-18-204-34-34.compute-1.amazonaws.com:5000/upload");
+  
+  const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
+  
+  useEffect(() => {
+    const fetchData = async () => {
+      setIsError(false);
+      setIsLoading(true);
+  
+      try {
+        const result = await axios(url);
+  
+        setData(result.data);
+      } catch (error) {
+        setIsError(true);
+      }
+  
+      setIsLoading(false);
+    };
+  
+    fetchData();
+  }, []);
+
+
+
+
+
     return (
         <div>
             <table>
                 <thead>
                     <tr>
                     <th column="0">Ledger Id</th>
-                    <th column="1">Description</th>
-                    <th column="2">Content Type</th>
-                    <th column="3">Hash</th>
-                    <th column="4">Key</th>
-                    <th column="5">Policy</th>
-                    <th column="6">Expiration</th>
+                    <th column="1">File Name</th>
+                    <th column="2">Hash</th>
+                    <th column="3">Expiration</th>
+                    <th column="4">Link</th>
 
                 </tr>
             </thead>
             <tbody>
                 {items.map(i => (
-                    <tr>{i.itemId}
-                    <td>{i.message}</td>
-                    <td>{i.contentType}</td>
+                    <tr>{i.ledgerId}
+                    <td>{i.name}</td>
                     <td>{i.hash}</td>
-                    <td>{i.key}</td>
-                    <td>{i.policy}</td>
                     <td>{i.expiration}</td>
+                    <td>{i.link}</td>
 
                     </tr>
                 ))}

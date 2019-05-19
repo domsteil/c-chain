@@ -28,7 +28,7 @@ export default () =>
         margin-right: 28px;
         background-color: #FFFFFF;
         width: 900px;
-        height: 650px;
+        height: 300px;
     }
 
       // CSS only media query for tablet
@@ -43,6 +43,8 @@ export default () =>
           text-align: center;
           max-width: 350px;
         }
+
+        .ledgerCard.js
         
 
         
