@@ -99,6 +99,11 @@ return [res, (...args) => setReq(fn(...args))];
 
 let verifyData;
 
+function retrieveData() {
+
+  return us
+}
+
 let handlePersonalSign = (e) => {
   let message = message;
   web3.eth.getAccounts((err, accounts) => {
@@ -133,7 +138,7 @@ function postPublisherEndpoint() {
 }
 
 export default function MessageBar(props) {
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState("Public Key for re-encryption");
   const [to, setTo] = useState("");
   const [who, setWho] = useState("");
   const [newMessage, postNewMessage] = postPublisherEndpoint();

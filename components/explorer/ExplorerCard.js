@@ -23,9 +23,9 @@ export default () =>
         padding-left: 28px;
         padding-right: 28px;
         margin-top: 28px;
-        margin-left: 28px;
+        margin-left: -28px;
         margin-right: 28px;
-        width: 900px;
+        width: 940px;
         height: 650px;
     }
 

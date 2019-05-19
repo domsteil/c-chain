@@ -2,13 +2,15 @@ import React, { useEffect, useState } from 'react';
 import useFetch from "../../components/useFetch";
 
 export default function LedgerList(props) {
-const items = useFetch("http://ec2-18-204-34-34.compute-1.amazonaws.com:5000/upload");
+const items = useFetch("http://ec2-18-204-34-34.compute-1.amazonaws.com:5000/encryptedFiles");
   
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
+  const [isUserLoggedIn, setIsUserLoggedIn] = useState(true);
   
   useEffect(() => {
     const fetchData = async () => {
+      setIsUserLoggedIn(true);
       setIsError(false);
       setIsLoading(true);
   

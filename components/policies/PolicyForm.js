@@ -1,18 +1,32 @@
 import React, { useState, useContext, useEffect } from 'react';
+import usePolicyForm from '../usePolicyForm';
 
 export default function PolicyForm(props) {
+
+      function useFormInput(initialValue) {
+        const [value, setValue] = useState(initialValue);
+    
+        function handleChange(e) {
+            setValue(e.target.value)
+        }
+    
+        return {
+            value,
+            onChange: handleChange
+        };
+    }
+    
+
     const policyName = useFormInput('')
     const policyExpirationDate = useFormInput('')
-    const policyLetters = useFormInput('')
     const policyPassword = useFormInput('');
-
-    useDocumentTitle(policyName)
 
 return (
     <section>
     <div className="row">
     <h1>New Policy</h1>
     <div className="column">
+    <form>
         <label >Policy Name:</label>
         <input className="policy" {...policyName} />
         <br/>
@@ -23,8 +37,10 @@ return (
         <input className="policy" type="password" {...policyPassword} />
         <br/>
         <br/>
+        </form>
         </div>
         <button className="policyButton" invert>Submit</button>
+        
     </div>
         <style jsx>{`
       .column {

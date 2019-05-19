@@ -14,7 +14,7 @@ if (process.browser) {
 }
 
 
-const ethUtil = require('ethereumjs-util'); // Required to convert message to Hex
+const ethUtil = require('ethereumjs-util');
 const msg = ethUtil.bufferToHex(new Buffer('ANY STRING', 'utf8'));
 
 let verifyData;
