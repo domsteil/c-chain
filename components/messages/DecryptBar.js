@@ -14,11 +14,6 @@ var uploadFile;
 var hash;
 
 var address;
-let fm = new Fortmatic('pk_test_F4970AF6BBC7F0C1');
-
-if (process.browser) {
-  web3 = new Web3(fm.getProvider());
-}
 
 
 function useAsyncEndpoint(fn) {

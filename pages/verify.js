@@ -12,14 +12,6 @@ import Header from '../components/header';
 import LedgerAuth from '../components/ledger/LedgerAuth';
 import PublicVerify from '../components/public/PublicVerify';
 
-
-var web3;
-
-let fm = new Fortmatic('pk_test_F4970AF6BBC7F0C1');
-if (process.browser) {
-  web3 = new Web3(fm.getProvider());
-}
-
 export default () => (
     <Page title="">
 	<Head>

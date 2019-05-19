@@ -12,11 +12,6 @@ var onSubmit;
 var uploadFile;
 
 var address;
-let fm = new Fortmatic('pk_test_F4970AF6BBC7F0C1');
-
-if (process.browser) {
-  web3 = new Web3(fm.getProvider());
-}
 
 
 function useAsyncEndpoint(fn) {
@@ -46,25 +41,6 @@ function useAsyncEndpoint(fn) {
       reader.onloadend = () => this.convertToBuffer(reader)
     };
 
-
-uploadFile = useUrsula("http://ec2-18-204-34-34.compute-1.amazonaws.com:5000/upload");
-
-onSubmit = async (event) => {
-      event.preventDefault();
-      const accounts = await web3.eth.getAccounts();
-    //save document to IPFS,return its hash#, and set hash# to state
-      await ipfs.add(this.state.buffer, (err, ipfsHash) => {
-        console.log(err,ipfsHash);
-        //setState by setting ipfsHash to ipfsHash[0].hash
-        this.setState({ ipfsHash:ipfsHash[0].hash });
-        storehash.methods.sendHash(this.state.ipfsHash).send({
-          from: accounts[0]
-        }, (error, transactionHash) => {
-          console.log(transactionHash);
-          this.setState({transactionHash});
-        });
-      })
-    };
   
   useEffect(() => {
     if (!req) return;
@@ -99,10 +75,6 @@ return [res, (...args) => setReq(fn(...args))];
 
 let verifyData;
 
-function retrieveData() {
-
-  return us
-}
 
 let handlePersonalSign = (e) => {
   let message = message;
@@ -154,20 +126,6 @@ return (
     <section>
     <div className="row">
         <div className="column">
-        <form id="ipfs-hash-form">
-        <select className="policyDropdown">
-          <option value="policy-1">Policy-1</option>
-          <option value="policy-2">Policy-2</option>
-        </select>
-        <input className="ipfsInput"
-        type = "file"
-      
-        />
-        <button className="policyButton" onClick="postPublisherEndpoint"> 
-        Upload
-        </button><img className="center" src="../static/verification.png" height="28" width="28" align="middle" alt=""/>
-        
-        </form>
         
         <br/>
         <input className="message-box" value={message} onChange={e => setMessage(e.target.value)} onKeyPress={handleKeyPress}  /> 

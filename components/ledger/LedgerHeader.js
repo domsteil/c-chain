@@ -7,11 +7,6 @@ import ipfs from '../../components/ipfs';
 
 var web3;
 var address;
-let fm = new Fortmatic('pk_test_F4970AF6BBC7F0C1');
-
-if (process.browser) {
-  web3 = new Web3(fm.getProvider());
-}
 
 
 const ethUtil = require('ethereumjs-util');

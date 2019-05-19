@@ -40,18 +40,18 @@ const items = useFetch("http://ec2-18-204-34-34.compute-1.amazonaws.com:5000/lis
                     <th column="0">Ledger Id</th>
                     <th column="1">File Name</th>
                     <th column="2">Hash</th>
-                    <th column="3">Expiration</th>
+                    <th column="3">Policy</th>
                     <th column="4">Link</th>
 
                 </tr>
             </thead>
             <tbody>
                 {items.map(i => (
-                    <tr>{i.ledgerId}
+                    <tr>{i.id}
                     <td>{i.name}</td>
                     <td>{i.hash}</td>
-                    <td>{i.expiration}</td>
-                    <td>{i.link}</td>
+                    <td>{i.policy} Month</td>
+                    <td>{i.url}</td>
 
                     </tr>
                 ))}

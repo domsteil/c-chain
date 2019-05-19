@@ -7,7 +7,6 @@ import Web3 from 'web3';
 import Navbar from '../components/navbar';
 import DecryptBar from '../components/messages/DecryptBar';
 import Footer from '../components/footer';
-import Storage from '../components/storage';
 import Header from '../components/header';
 import LedgerAuth from '../components/ledger/LedgerAuth';
 

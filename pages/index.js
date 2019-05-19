@@ -6,14 +6,7 @@ import Web3 from 'web3';
 import Navbar from '../components/navbar';
 import MessageBar from '../components/messages/MessageBar';
 import Header from '../components/header';
-
-
-var web3;
-
-let fm = new Fortmatic('pk_test_F4970AF6BBC7F0C1');
-if (process.browser) {
-  web3 = new Web3(fm.getProvider());
-}
+import Upload from '../components/upload/Upload';
 
 export default () => (
     <Page title="">
@@ -26,6 +19,7 @@ export default () => (
       <h1>Triple<b>Check</b></h1>
       <h4>Digital Privacy, Origination and Verification</h4>
       <Header />
+      <Upload />
       <MessageBar />
       <CChainDashboard />
       <br/>
