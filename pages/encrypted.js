@@ -2,7 +2,6 @@ import Page from '../components/page';
 import Head from 'next/head'
 import CChainDashboard from '../components/C-ChainDashboard';
 import Fortmatic from 'fortmatic';
-import IpfsApi from '../components/ipfs'
 import Web3 from 'web3';
 import Navbar from '../components/navbar';
 import DecryptBar from '../components/messages/DecryptBar';

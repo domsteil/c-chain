@@ -5,6 +5,7 @@ import Web3 from 'web3';
 import Fortmatic from 'fortmatic';
 import useUrsula from "../useUrsula";
 import useFetch from "../useFetch";
+import TripleCheck from "../triplecheck";
 
 var web3;
 var state;
@@ -86,6 +87,7 @@ function decryptData() {
 };
 
 export default function DecryptBar(props) {
+  const [decrypted, useDecrypted] = useState(false);
   const [password, setPassword] = useState("Public Key for re-encryption");
   const [hash, setHash] = useState("Hash")
 
@@ -100,11 +102,7 @@ return (
     <div className="row">
         <div className="column">
 
-        <input className="message-box" type="text" value={hash} onChange={e => setHash(e.target.value)} onKeyPress={handleKeyPress}  /> 
-        <br/>
-        <br/>
-        <input className="message-box" type="password" value={password} onChange={e => setPassword(e.target.value)} onKeyPress={handleKeyPress}  /> 
-        <a><button onClick={decryptData} className="policyButton" invert >Decrypt</button><img className="center" src="../static/verification.png" height="28" width="28" align="middle" alt=""/></a>
+        <TripleCheck />
         </div>
         
         </div>

@@ -3,7 +3,6 @@ import { withRouter } from 'next/router';
 import classNames from 'classnames';
 import Fortmatic from 'fortmatic';
 import Web3 from 'web3';
-import ipfs from '../../components/ipfs';
 import ExplorerDetails from './ExplorerDetails';
 
 var web3;
