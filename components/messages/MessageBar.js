@@ -163,7 +163,7 @@ return (
         type = "file"
       
         />
-        <button className="policyButton" onClick="uploadFile"> 
+        <button className="policyButton" onClick="postPublisherEndpoint"> 
         Upload
         </button><img className="center" src="../static/verification.png" height="28" width="28" align="middle" alt=""/>
         
