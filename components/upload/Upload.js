@@ -71,7 +71,7 @@ class Upload extends Component {
       });
 
       const formData = new FormData();
-      formData.append("policy", policy, policy.name);
+      formData.append("policy", policy1);
       formData.append("file", file, file.name);
 
       req.open("POST", "http://ec2-18-204-34-34.compute-1.amazonaws.com:5000/upload");

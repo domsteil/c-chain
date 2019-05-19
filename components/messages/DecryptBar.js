@@ -81,12 +81,9 @@ const decryptAPI = "http://ec2-18-204-34-34.compute-1.amazonaws.com:5000/decrypt
 
 function decryptData() {
   
-  return useAsyncEndpoint(data => ({
-  url: decryptAPI,
-  method: "GET",
-  data
-}));
-}
+  useFetch(decryptAPI);
+
+};
 
 export default function DecryptBar(props) {
   const [password, setPassword] = useState("Public Key for re-encryption");
@@ -102,23 +99,7 @@ return (
     <section>
     <div className="row">
         <div className="column">
-        <form id="ipfs-hash-form">
-        <select className="policyDropdown">
-          <option value="policy-1">Policy-1</option>
-          <option value="policy-2">Policy-2</option>
-        </select>
-        <input className="ipfsInput"
-        type = "file"
-      
-        />
-        <button className="policyButton" onClick="uploadFile"> 
-        Upload
-        </button><img className="center" src="../static/verification.png" height="28" width="28" align="middle" alt=""/>
-        
-        </form>
-        
-        <br/>
-        <br/>
+
         <input className="message-box" type="text" value={hash} onChange={e => setHash(e.target.value)} onKeyPress={handleKeyPress}  /> 
         <br/>
         <br/>

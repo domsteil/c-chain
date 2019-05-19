@@ -11,6 +11,10 @@ export default () => (
       <a>Policies</a>
     </Link>
 
+    <Link href='/encrypted'>
+    <a>Decrypt</a>
+    </Link>
+
     <Link href='/verify'>
       <a>Verify</a>
     </Link>
