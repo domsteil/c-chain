@@ -11,12 +11,12 @@ export default () => (
       <a>Policies</a>
     </Link>
 
-    <Link href='/files'>
+    <Link href='/public'>
       <a>Public Files</a>
     </Link>
 
-    <Link href='/ledger'>
-      <a>Enrypted Files</a>
+    <Link href='/encrypted'>
+      <a>Encrypted Files</a>
     </Link>
 
     <Link href='/explorer'>

@@ -38,7 +38,7 @@ export default () => (
 
 
 .main {
-  background-color: #000;
+  background-color: #6200EE;
 }
   b {
     font-weight: normal;

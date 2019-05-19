@@ -23,7 +23,6 @@ let verifyData;
 export default () => 
 <section>
     <div className="actions">
-    <h1>TripleCheck Explorer</h1>
     <ExplorerDetails />
       </div>
     <style jsx>{`
