@@ -40,21 +40,8 @@ if (process.browser) {
       };
 
 
-export default withRouter(({ isMobile, router }) => {
+export default withRouter(({ router }) => {
   const { route } = router;
-
-  return (
-    <MediaQueryConsumer>
-      {media => {
-        if (media.isMobile) {
-          return (
-            <Container center>
-              <h1 className="visually-hidden" aria-hidden="true">
-                C-Chain Network
-              </h1>
-            </Container>
-          );
-        }
 
         return (
           <Container center>
@@ -152,7 +139,4 @@ b {
             </nav>
           </Container>
         );
-      }}
-    </MediaQueryConsumer>
-  );
 });

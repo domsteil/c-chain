@@ -44,7 +44,7 @@ export default class TripleCheck extends React.Component {
           </label>
           <br/>
           <br/>
-          <button className="policyButton" type="submit">Decrypt</button>
+          <button className="policyButton" type="submit">Decrypt</button><img className="center" src="../static/verification.png" height="28" width="28" align="middle" alt=""/>
         </form>
         <style jsx>{`
 

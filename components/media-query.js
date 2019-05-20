@@ -4,23 +4,17 @@ const {
   Provider: MediaQueryProvider,
   Consumer: MediaQueryConsumer
 } = React.createContext({
-  isMobile: false,
   isTablet: false
 });
 
 const withMediaQuery = Comp =>
   class extends PureComponent {
     state = {
-      isMobile: false,
       isTablet: false
     };
 
     onResize = () => {
-      const isMobile = window.innerWidth < 640;
       const isTablet = window.innerWidth < 960;
-      if (isMobile !== this.state.isMobile) {
-        this.setState({ isMobile });
-      }
       if (isTablet !== this.state.isTablet) {
         this.setState({ isTablet });
       }
@@ -36,11 +30,11 @@ const withMediaQuery = Comp =>
     }
 
     render() {
-      const { isMobile, isTablet } = this.state;
+      const { isTablet } = this.state;
 
       return (
-        <MediaQueryProvider value={{ isMobile, isTablet }}>
-          <Comp isMobile={isMobile} isTablet={isTablet} {...this.props} />
+        <MediaQueryProvider value={{ isTablet }}>
+          <Comp isTablet={isTablet} {...this.props} />
         </MediaQueryProvider>
       );
     }
