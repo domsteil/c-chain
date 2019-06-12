@@ -48,7 +48,7 @@ class Upload extends Component {
       req.upload.addEventListener("progress", event => {
         if (event.lengthComputable) {
           const copy = { ...this.state.uploadProgress };
-          copy[file.name] = {
+          copy[file.filename] = {
             state: "pending",
             percentage: (event.loaded / event.total) * 100
           };
@@ -58,21 +58,21 @@ class Upload extends Component {
 
       req.upload.addEventListener("load", event => {
         const copy = { ...this.state.uploadProgress };
-        copy[file.name] = { state: "done", percentage: 100 };
+        copy[file.filename] = { state: "done", percentage: 100 };
         this.setState({ uploadProgress: copy });
         resolve(req.response);
       });
 
       req.upload.addEventListener("error", event => {
         const copy = { ...this.state.uploadProgress };
-        copy[file.name] = { state: "error", percentage: 0 };
+        copy[file.filename] = { state: "error", percentage: 0 };
         this.setState({ uploadProgress: copy });
         reject(req.response);
       });
 
       const formData = new FormData();
       formData.append("policy", policy1);
-      formData.append("file", file, file.name);
+      formData.append("file", file, file.filename);
 
       req.open("POST", "https://app.triplecheck.network/upload");
       req.send(formData);
@@ -80,7 +80,7 @@ class Upload extends Component {
   }
 
   renderProgress(file) {
-    const uploadProgress = this.state.uploadProgress[file.name];
+    const uploadProgress = this.state.uploadProgress[file.filename];
     if (this.state.uploading || this.state.successfullUploaded) {
       return (
         <div className="ProgressWrapper">
@@ -141,7 +141,7 @@ class Upload extends Component {
             {this.state.files.map(file => {
               return (
                 <div key={file.name} className="Row">
-                  <span className="Filename">{file.name}</span>
+                  <span className="Filename">{file.filename}</span>
                   {this.renderProgress(file)}
                 </div>
               );

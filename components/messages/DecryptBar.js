@@ -77,15 +77,6 @@ let handlePersonalSign = (e) => {
   });
 };
 
-
-const decryptAPI = "https://app.triplecheck.network/decrypt";
-
-function decryptData() {
-  
-  useFetch(decryptAPI);
-
-};
-
 export default function DecryptBar(props) {
   const [decrypted, useDecrypted] = useState(false);
   const [password, setPassword] = useState("Public Key for re-encryption");

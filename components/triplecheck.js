@@ -1,26 +1,29 @@
 import React from 'react';
 import axios from 'axios';
+import querystring from 'querystring';
+
 
 export default class TripleCheck extends React.Component {
   state = {
     hash: '',
-    password: '',
+    pass: '',
     decryptedData: []
   }
 
-  handleChange = event => {
+  handleHashChange = event => {
     this.setState({ hash: event.target.value });
-    this.setState({ password: event.target.value });
+  }
+
+  handlePasswordChange = event => {
+    this.setState({ pass: event.target.value });
   }
 
   handleSubmit = event => {
     event.preventDefault();
 
-    const file = {
-      hash: this.state.hash,
-      password: this.state.password
+    const hash = this.state.hash;
 
-    };
+    const pass = this.state.pass;
 
     let axiosConfig = {
       headers: {
@@ -29,7 +32,7 @@ export default class TripleCheck extends React.Component {
       }
     };
 
-    axios.post(`https://app.triplecheck.network/decrypt`, { file }, axiosConfig)
+    axios.post(`https://app.triplecheck.network/decrypt`, querystring.stringify({ hash: hash, pass: pass}),  axiosConfig)
     .then(res => {
 
       const decryptedData = res.data;
@@ -44,13 +47,13 @@ export default class TripleCheck extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <label className="tripleCheck">
            <h4>TripleCheck Hash:</h4>
-            <input className="message-box" type="text" name="hash" onChange={this.handleChange} />
+            <input className="message-box" type="text" name="hash" onChange={this.handleHashChange} />
           </label>
           <br/>
           <br/>
           <label className="tripleCheck">
            <h4>Password:</h4>
-            <input className="message-box" type="password" name="password" onChange={this.handleChange} />
+            <input className="message-box" type="password" name="pass" onChange={this.handlePasswordChange} />
           </label>
           <br/>
           <br/>
