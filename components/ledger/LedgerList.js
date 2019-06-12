@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import useFetch from "../../components/useFetch";
 
 export default function LedgerList(props) {
-const items = useFetch("http://ec2-18-204-34-34.compute-1.amazonaws.com:5000/listEncryptedFiles");
+const items = useFetch("https://app.triplecheck.network/listEncryptedFiles");
   
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -79,9 +79,11 @@ const items = useFetch("http://ec2-18-204-34-34.compute-1.amazonaws.com:5000/lis
     }
 
     thead {
-        display: table-header-group;
-        vertical-align: middle;
+        vertical-align: left;
+        horizontal-align: left;
+        padding-right: -100px;
         border-color: inherit;
+        font-size: 20px;
     }
 
     th {
@@ -89,7 +91,7 @@ const items = useFetch("http://ec2-18-204-34-34.compute-1.amazonaws.com:5000/lis
         font-size: 14px;
         font-weight: 400;
         letter-spacing: 0px;
-        padding-left: -20px;
+        padding-left: -80px;
         padding-right: 20px;
     }
 
@@ -109,6 +111,7 @@ const items = useFetch("http://ec2-18-204-34-34.compute-1.amazonaws.com:5000/lis
       padding: 0px 10px;
       color: rgb(68, 68, 68);
       font-size: 14px;
+      margin-left: -50px;
       border-bottom: 1px solid rgb(234, 234, 234);
   
   }

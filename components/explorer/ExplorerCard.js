@@ -14,8 +14,7 @@ export default () =>
     <style jsx>{`
 
       .explorerCard {
-        border-radius: 5px;
-        box-shadow: 0 8px 28px 0 rgba(86,91,115,.15);
+
         position: center;
         text-align: center;
         box-sizing: border-box;

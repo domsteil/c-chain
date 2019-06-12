@@ -19,7 +19,7 @@ export default () => (
       <section className="main">
       <Navbar />
       <h1>Triple<b>Check</b></h1>
-      <h4>Digital Privacy, Origination and Verification</h4>
+      <h4>Content publishing, encryption/decryption, and verification of published content. </h4>
       <Header />
       <MessageBar />
       <PublicVerify />

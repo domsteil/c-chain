@@ -4,7 +4,8 @@ import axios from 'axios';
 export default class TripleCheck extends React.Component {
   state = {
     hash: '',
-    password: ''
+    password: '',
+    decryptedData: []
   }
 
   handleChange = event => {
@@ -21,32 +22,60 @@ export default class TripleCheck extends React.Component {
 
     };
 
-    axios.post(`http://ec2-18-204-34-34.compute-1.amazonaws.com:5000/decrypt/`, { file })
-      .then(res => {
-        console.log(res);
-        console.log(res.data);
-      })
-  }
+    let axiosConfig = {
+      headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "POST,GET,OPTIONS, PUT, DELETE"
+      }
+    };
+
+    axios.post(`https://app.triplecheck.network/decrypt`, { file }, axiosConfig)
+    .then(res => {
+
+      const decryptedData = res.data;
+      this.setState({ decryptedData });
+      console.log(res.data);
+    })
+}
 
   render() {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
           <label className="tripleCheck">
-           Hash: 
+           <h4>TripleCheck Hash:</h4>
             <input className="message-box" type="text" name="hash" onChange={this.handleChange} />
           </label>
           <br/>
           <br/>
           <label className="tripleCheck">
-           Password: 
+           <h4>Password:</h4>
             <input className="message-box" type="password" name="password" onChange={this.handleChange} />
           </label>
           <br/>
           <br/>
           <button className="policyButton" type="submit">Decrypt</button><img className="center" src="../static/verification.png" height="28" width="28" align="middle" alt=""/>
         </form>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <p>{this.state.decryptedData}</p>
+        <br/>
+
         <style jsx>{`
+
+
+
+.html {
+  background-color: #6200EE;
+}
+
+.body {
+background-color: #6200EE;
+
+}
+
 
 .column {
   text-align: center;
@@ -60,6 +89,24 @@ export default class TripleCheck extends React.Component {
 .center {
   margin-left: 3px;
   margin-bottom: 10px;
+}
+
+h4 {
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+  margin: 10px 0;
+  font-size: 16px;
+  font-weight: normal;
+  padding-left: 5px;
+  color: #FFF;
+}
+
+p {
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+  margin: 10px 0;
+  font-size: 14px;
+  font-weight: normal;
+  padding-left: 5px;
+  color: #FFF;
 }
 
 .to {

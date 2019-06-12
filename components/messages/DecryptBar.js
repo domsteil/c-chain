@@ -78,7 +78,7 @@ let handlePersonalSign = (e) => {
 };
 
 
-const decryptAPI = "http://ec2-18-204-34-34.compute-1.amazonaws.com:5000/decrypt/";
+const decryptAPI = "https://app.triplecheck.network/decrypt";
 
 function decryptData() {
   

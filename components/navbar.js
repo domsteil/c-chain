@@ -46,7 +46,7 @@ export default withRouter(({ router }) => {
         return (
           <Container center>
             <h1 className="visually-hidden" aria-hidden="true">
-              C-Chain Network
+              TripleCheck Network
             </h1>
             <nav className="f-reset">
               <style jsx>
@@ -131,7 +131,7 @@ b {
                 `}
               </style>
                 <div className="nav">
-                  <a><button onClick={handleLogin} className="signIn" invert >LogIn</button></a>
+                  <a><button onClick={handleLogin} className="signIn" invert >Log In</button></a>
                 </div>
 
                 <p><b className="connected"></b>{address}</p>

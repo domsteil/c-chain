@@ -1,12 +1,13 @@
 import Page from '../components/page';
 import Head from 'next/head'
 import CChainDashboard from '../components/C-ChainDashboard';
-import Fortmatic from 'fortmatic';
-import Web3 from 'web3';
 import Navbar from '../components/navbar';
 import MessageBar from '../components/messages/MessageBar';
 import Header from '../components/header';
 import Upload from '../components/upload/Upload';
+
+
+global.triplecheckURL = 'https://app.triplecheck.network';
 
 export default () => (
     <Page title="">
@@ -17,7 +18,7 @@ export default () => (
       <section className="main">
       <Navbar />
       <h1>Triple<b>Check</b></h1>
-      <h4>Digital Privacy, Origination and Verification</h4>
+      <h4>Content publishing, encryption/decryption, and verification of published content. </h4>
       <Header />
       <Upload />
       <MessageBar />

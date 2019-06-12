@@ -17,7 +17,7 @@ export default withMediaQuery(({ title, description, children }) => (
         name="description"
         content={
           description ||
-          'TripleCheck it.'
+          'TripleCheck it. Content publishing, encryption/decryption, and verification of published content.'
         }
       />
     </Head>
@@ -61,7 +61,7 @@ export default withMediaQuery(({ title, description, children }) => (
         }
         html,
         body {
-          background-color: #061c3f;
+          background-color: #6200EE;
           color: #111;
         }
         ::selection {

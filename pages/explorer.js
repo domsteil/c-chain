@@ -3,28 +3,23 @@ import Head from 'next/head'
 import CChainDashboard from '../components/C-ChainDashboard';
 import Fortmatic from 'fortmatic';
 import Web3 from 'web3';
+import Header from '../components/header';
 import Navbar from '../components/navbar';
 import MessageBar from '../components/messages/MessageBar';
 import Footer from '../components/footer';
 
 
-var web3;
-
-let fm = new Fortmatic('pk_test_F4970AF6BBC7F0C1');
-if (process.browser) {
-  web3 = new Web3(fm.getProvider());
-}
-
 export default () => (
     <Page title="">
 	<Head>
-      <title>TripleCheck Dashboard</title>
+  <title>TripleCheck Dashboard</title>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <section className="main">
       <Navbar />
       <h1>Triple<b>Check</b></h1>
-      <h4>Digital Privacy, Origination and Verification</h4>
+      <h4>Content publishing, encryption/decryption, and verification of published content. </h4>
+      <Header />
       <CChainDashboard />
       <br/>
       </section>

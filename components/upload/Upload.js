@@ -74,7 +74,7 @@ class Upload extends Component {
       formData.append("policy", policy1);
       formData.append("file", file, file.name);
 
-      req.open("POST", "http://ec2-18-204-34-34.compute-1.amazonaws.com:5000/upload");
+      req.open("POST", "https://app.triplecheck.network/upload");
       req.send(formData);
     });
   }
@@ -133,7 +133,11 @@ class Upload extends Component {
               disabled={this.state.uploading || this.state.successfullUploaded}
             />
           </div>
-          <div className="Files">
+        </div>
+
+        <br/>
+
+        <div className="Files">
             {this.state.files.map(file => {
               return (
                 <div key={file.name} className="Row">
@@ -143,10 +147,14 @@ class Upload extends Component {
               );
             })}
           </div>
-        </div>
-        <div className="Actions">{this.renderActions()}</div>
-
-        <form>
+          <form>
+        
+        <button className="policyButton"
+          disabled={this.state.files.length < 0 || this.state.uploading}
+          onClick={this.uploadFiles}
+        >
+          Upload
+        </button>
         <select id="policy" className="policyDropdown" onSelect={() => this.setState({ policy: [], successfullUploaded: false })} >
           <option value="policy1">Policy 1</option>
           <option value="policy2">Policy 2</option>
@@ -163,7 +171,7 @@ class Upload extends Component {
     overflow: hidden;
     width: 300px;
     align: center;
-    margin-left: 800px;
+    margin-left: 850px;
   }
 
   .policyButton {
@@ -176,9 +184,10 @@ class Upload extends Component {
     text-color: #000;
     line-height: 0;
     white-space: nowrap;
-    width: 120px;
+    width: 100px;
     height: 30px;
-    margin-left: 8px;
+    margin-left: 3px;
+    padding-l
     font-weight: 500;
     font-size: 12px;
     color: rgb(102, 102, 102);
@@ -193,6 +202,7 @@ class Upload extends Component {
     border-style: solid;
     border-color: rgb(234, 234, 234);
     border-image: initial;
+    margin-bottom: 8px;
     transition: all 0.2s ease 0s;
     overflow: hidden;
     outline: none;
@@ -205,7 +215,7 @@ class Upload extends Component {
     text-align: center;
     line-height: 0;
     white-space: nowrap;
-    width: 120px;
+    width: 100px;
     height: 30px;
     margin-left: 8px;
     font-weight: 500;
@@ -216,7 +226,7 @@ class Upload extends Component {
     cursor: pointer;
     text-decoration: none;
     padding: 0px 10px;
-    margin-bottom: 2px;
+    margin-bottom: 8px;
     border-radius: 5px;
     border-width: 1px;
     border-style: solid;
@@ -318,6 +328,38 @@ class Upload extends Component {
     background: rgb(189, 189, 189);
     cursor: default;
   }
+
+  // CSS only media query for tablet
+  @media screen and (max-width: 960px) {
+    .row {
+      flex-direction: column;
+      margin: -1.5rem 0;
+      padding-bottom: 8px;
+      padding-top: 8px;
+      padding-left: 28px;
+    }
+  
+    
+    .column {
+      width: 100%;
+      text-align: center;
+      max-width: 350px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      margin-bottom: 28px;
+    }
+  
+    .center {
+      text-align: center;
+    }
+  
+    .column2 {
+      list-style: none;
+      display: none;
+    }
+  }
+  
+
 `}</style>
       </div>
     );

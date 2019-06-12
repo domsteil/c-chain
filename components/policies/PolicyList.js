@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import useFetch from "../../components/useFetch";
 
 export default function LedgerList(props) {
-const items = useFetch("http://ec2-18-204-34-34.compute-1.amazonaws.com:5000/listPolicies");
+const items = useFetch("https://app.triplecheck.network/listPolicies");
   
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -40,14 +40,6 @@ const items = useFetch("http://ec2-18-204-34-34.compute-1.amazonaws.com:5000/lis
 
                 </tr>
             </thead>
-            <tbody>
-                {items.map(i => (
-                    <tr>{i.policyName}
-                    <td>{i.policyExpirationDate}</td>
-
-                    </tr>
-                ))}
-            </tbody>
             </table>
             <style jsx>{`
       .column {

@@ -26,11 +26,11 @@ export default ({
           ${center ? 'text-align: center;' : ''}
           ${
             dark
-              ? 'background-image: linear-gradient(to bottom, #061c3f  0%, #323232 100%);'
+              ? 'background-image: linear-gradient(to bottom, #6200EE  0%, #323232 100%);'
               : ''
           }
           ${dark ? 'color: #f1f1f1;' : ''}
-          ${black ? 'background-color: #061c3f;' : ''}
+          ${black ? 'background-color: #6200EE;' : ''}
           ${gray ? 'background-color: #f6f6f6;' : ''}
           ${wide && !overflow ? 'overflow: hidden;' : ''}
           ${minHeight ? `min-height: ${minHeight}px;` : ''}

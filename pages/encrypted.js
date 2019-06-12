@@ -10,13 +10,6 @@ import Header from '../components/header';
 import LedgerAuth from '../components/ledger/LedgerAuth';
 
 
-var web3;
-
-let fm = new Fortmatic('pk_test_F4970AF6BBC7F0C1');
-if (process.browser) {
-  web3 = new Web3(fm.getProvider());
-}
-
 export default () => (
     <Page title="">
 	<Head>
@@ -26,10 +19,9 @@ export default () => (
       <section className="main">
       <Navbar />
       <h1>Triple<b>Check</b></h1>
-      <h4>Digital Privacy, Origination and Verification</h4>
+      <h4>Content publishing, encryption/decryption, and verification of published content. </h4>
       <Header />
       <DecryptBar />
-      <LedgerAuth/>
       <br/>
       </section>
       <br/>

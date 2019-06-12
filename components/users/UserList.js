@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import useFetch from "../../components/useFetch";
 
 export default function UserList(props) {
-const users = useFetch("http://localhost:10050/api/getUsers");
+const users = useFetch("https://app.triplecheck.network/getUsers");
     return (
         <div>
             <table>

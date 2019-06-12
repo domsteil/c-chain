@@ -12,6 +12,7 @@ export default () =>
     <style jsx>{`
 
       .decryptCard {
+        overflow-y: scroll;
         background: #;
         border-radius: 5px;
         box-shadow: 0 8px 28px 0 rgba(86,91,115,.15);
@@ -26,8 +27,8 @@ export default () =>
         margin-right: 28px;
         background-image: radial-gradient(circle, #D7D7D7, #D7D7D7 .8px, #FFF .8px, #FFF);
         background-size: 28px 28px;
-        width: 900px;
-        height: 550px;
+        width: 1200px;
+        height: 850px;
     }
 
       // CSS only media query for tablet

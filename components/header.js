@@ -12,7 +12,7 @@ export default () => (
     </Link>
 
     <Link href='/encrypted'>
-    <a>Decrypt</a>
+      <a>Decrypt</a>
     </Link>
 
     <Link href='/verify'>
@@ -20,7 +20,7 @@ export default () => (
     </Link>
 
     <Link href='/explorer'>
-        <a>Explorer</a>
+      <a>Explorer</a>
     </Link>
 
 

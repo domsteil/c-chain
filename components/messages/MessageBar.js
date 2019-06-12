@@ -4,6 +4,7 @@ import { deflateSync } from 'zlib';
 import Web3 from 'web3';
 import Fortmatic from 'fortmatic';
 import useUrsula from "../useUrsula";
+import Verify from "../verify";
 
 var web3;
 var state;
@@ -99,7 +100,7 @@ let handlePersonalSign = (e) => {
 
 
 
-const publisherAPI = "http://ec2-18-204-34-34.compute-1.amazonaws.com:5000/upload";
+const publisherAPI = "https://app.triplecheck.network/upload";
 
 function postPublisherEndpoint() {
   
@@ -127,11 +128,9 @@ return (
     <div className="row">
         <div className="column">
         
-        <br/>
-        <input className="message-box" value={message} onChange={e => setMessage(e.target.value)} onKeyPress={handleKeyPress}  /> 
-        <a><button onClick={verifyData} className="policyButton" invert >Verify</button><img className="center" src="../static/verification.png" height="28" width="28" align="middle" alt=""/></a>
+        <Verify />
+
         </div>
-        
         </div>
         <style jsx>{`
 
