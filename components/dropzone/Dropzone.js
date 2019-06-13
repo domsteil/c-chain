@@ -107,6 +107,27 @@ class Dropzone extends Component {
   .FileInput {
     display: none;
   }
+
+
+  // CSS only media query for tablet
+  @media screen and (max-width: 960px) {
+
+    .Dropzone {
+      height: 50px;
+      width: 50px;
+      background-color: #fff;
+      border: 2px dashed rgb(187, 186, 186);
+      border-radius: 28%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      display: none;
+    }
+
+
+  }
+
 `}</style>
       </div>
     );

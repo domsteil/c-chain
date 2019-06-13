@@ -48,7 +48,7 @@ class Upload extends Component {
       req.upload.addEventListener("progress", event => {
         if (event.lengthComputable) {
           const copy = { ...this.state.uploadProgress };
-          copy[file.filename] = {
+          copy[file.name] = {
             state: "pending",
             percentage: (event.loaded / event.total) * 100
           };
@@ -58,21 +58,21 @@ class Upload extends Component {
 
       req.upload.addEventListener("load", event => {
         const copy = { ...this.state.uploadProgress };
-        copy[file.filename] = { state: "done", percentage: 100 };
+        copy[file.name] = { state: "done", percentage: 100 };
         this.setState({ uploadProgress: copy });
         resolve(req.response);
       });
 
       req.upload.addEventListener("error", event => {
         const copy = { ...this.state.uploadProgress };
-        copy[file.filename] = { state: "error", percentage: 0 };
+        copy[file.name] = { state: "error", percentage: 0 };
         this.setState({ uploadProgress: copy });
         reject(req.response);
       });
 
       const formData = new FormData();
       formData.append("policy", policy1);
-      formData.append("file", file, file.filename);
+      formData.append("file", file, file.name);
 
       req.open("POST", "https://app.triplecheck.network/upload");
       req.send(formData);
@@ -80,7 +80,7 @@ class Upload extends Component {
   }
 
   renderProgress(file) {
-    const uploadProgress = this.state.uploadProgress[file.filename];
+    const uploadProgress = this.state.uploadProgress[file.name];
     if (this.state.uploading || this.state.successfullUploaded) {
       return (
         <div className="ProgressWrapper">
@@ -141,7 +141,7 @@ class Upload extends Component {
             {this.state.files.map(file => {
               return (
                 <div key={file.name} className="Row">
-                  <span className="Filename">{file.filename}</span>
+                  <span className="Filename">{file.name}</span>
                   {this.renderProgress(file)}
                 </div>
               );
@@ -357,6 +357,81 @@ class Upload extends Component {
       list-style: none;
       display: none;
     }
+  }
+
+  .Upload {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: flex-start;
+    text-align: left;
+    overflow: hidden;
+    width: 300px;
+    align: center;
+    margin-left: 850px;
+  }
+
+  .policyButton {
+    -webkit-appearance: none;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    text-transform: uppercase;
+    text-align: center;
+    text-color: #000;
+    line-height: 0;
+    white-space: nowrap;
+    width: 100px;
+    height: 30px;
+    margin-left: 3px;
+    padding-l
+    font-weight: 500;
+    font-size: 12px;
+    color: rgb(102, 102, 102);
+    background-color: rgb(255, 255, 255);
+    user-select: none;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 0px 10px;
+    margin-bottom: 2px;
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(234, 234, 234);
+    border-image: initial;
+    margin-bottom: 8px;
+    transition: all 0.2s ease 0s;
+    overflow: hidden;
+    outline: none;
+  }
+
+  .policyDropdown {
+    display: inline-block;
+    vertical-align: middle;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 0;
+    white-space: nowrap;
+    width: 100px;
+    height: 30px;
+    margin-left: 8px;
+    font-weight: 500;
+    font-size: 12px;
+    color: rgb(102, 102, 102);
+    background-color: rgb(255, 255, 255);
+    user-select: none;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 0px 10px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(234, 234, 234);
+    border-image: initial;
+    transition: all 0.2s ease 0s;
+    overflow: hidden;
+    outline: none;
   }
   
 

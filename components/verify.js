@@ -227,24 +227,71 @@ return (
 
         .message-box {
           padding-bottom: 28px;
-          width: 20px;
-          overflow: auto;
-          margin: 0; 
-          min-height: 42px; 
-          height: 38px; 
-          max-height: 180px; 
+          width: 20%;
           border: 2px solid rgba(134,134,134,.7);
           border-radius: .375rem;
           outline: 0;
           background: #FFFFFF;
-          resize: none;
           box-shadow: none;
           color: #1d1c1d;
-          -webkit-user-select: auto;
-          -moz-user-select: auto;
-          -ms-user-select: auto;
-          user-select: auto;
-          padding: 9px 30px 10px 50px;
+          display: none;
+        }
+
+        .policyButton {
+          -webkit-appearance: none;
+          position: relative;
+          display: inline-block;
+          vertical-align: middle;
+          text-transform: uppercase;
+          text-align: center;
+          line-height: 0;
+          white-space: nowrap;
+          margin-left: 8px;
+          font-weight: 500;
+          font-size: 12px;
+          color: rgb(102, 102, 102);
+          background-color: rgb(255, 255, 255);
+          user-select: none;
+          cursor: pointer;
+          text-decoration: none;
+          padding: 0px 10px;
+          margin-bottom: 2px;
+          border-radius: 5px;
+          border-width: 1px;
+          border-style: solid;
+          border-color: rgb(234, 234, 234);
+          border-image: initial;
+          transition: all 0.2s ease 0s;
+          display: none;
+        }
+  
+        .policyDropdown {
+          display: inline-block;
+          vertical-align: middle;
+          text-transform: uppercase;
+          text-align: center;
+          line-height: 0;
+          white-space: nowrap;
+          width: 100px;
+          height: 30px;
+          margin-left: 8px;
+          font-weight: 500;
+          font-size: 12px;
+          color: rgb(102, 102, 102);
+          background-color: rgb(255, 255, 255);
+          user-select: none;
+          cursor: pointer;
+          text-decoration: none;
+          padding: 0px 10px;
+          margin-bottom: 2px;
+          border-radius: 5px;
+          border-width: 1px;
+          border-style: solid;
+          border-color: rgb(234, 234, 234);
+          border-image: initial;
+          transition: all 0.2s ease 0s;
+          overflow: hidden;
+          outline: none;
           display: none;
         }
 

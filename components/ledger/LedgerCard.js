@@ -45,7 +45,21 @@ export default () =>
           max-width: 350px;
         }
 
-        .ledgerCard.js
+        .ledgerCard {
+          overflow-y: scroll;
+          background: #fff;
+          border-radius: 5px;
+          box-shadow: 0 8px 28px 0 rgba(86,91,115,.15);
+          position: center;
+          text-align: center;
+          box-sizing: border-box;
+          align: center;
+          padding-right: 28px;
+          margin-top: 28px;
+          background-color: #FFFFFF;
+          width: 250px;
+          height: 300px;
+      }
         
 
         

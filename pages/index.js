@@ -5,6 +5,7 @@ import Navbar from '../components/navbar';
 import MessageBar from '../components/messages/MessageBar';
 import Header from '../components/header';
 import Upload from '../components/upload/Upload';
+import FileUpload from '../components/upload/FileUpload';
 
 
 global.triplecheckURL = 'https://app.triplecheck.network';
@@ -20,7 +21,7 @@ export default () => (
       <h1>Triple<b>Check</b></h1>
       <h4>Content publishing, encryption/decryption, and verification of published content. </h4>
       <Header />
-      <Upload />
+      <FileUpload />
       <MessageBar />
       <CChainDashboard />
       <br/>
@@ -185,6 +186,7 @@ from, to { border-color: transparent }
     list-style: none;
     display: none;
   }
+
 }
 
 

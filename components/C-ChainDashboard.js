@@ -33,6 +33,7 @@ export default () =>
         .row {
           flex-direction: column;
           margin: -1.5rem 0;
+          display: none;
         }
         .column {
           width: 100%;
