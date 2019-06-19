@@ -74,7 +74,7 @@ const items = useFetch("https://app.triplecheck.network/listEncryptedFiles");
       .table {
         display: table;
         border-collapse: separate;
-        border-spacing: 2px;
+        border-spacing: 5px;
         border-color: grey;
     }
 

@@ -14,19 +14,17 @@ export default class Verify extends React.Component {
   handleSubmit = event => {
     event.preventDefault();
 
-    const file = {
-      hash: this.state.hash,
 
-    };
+   const hash = this.state.hash;
 
     let axiosConfig = {
       headers: {
-          'Content-Type': 'application/json;charset=UTF-8',
           "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "POST,GET,OPTIONS, PUT, DELETE"
       }
     };
 
-    axios.post(`https://app.triplecheck.network/verify`, { file }, axiosConfig)
+    axios.post(`https://app.triplecheck.network/verify`, querystring.stringify({ hash: hash}),  axiosConfig)
     .then(res => {
 
       const verifiedData = res.data;
