@@ -26,7 +26,7 @@
     "react-redux": "^7.0.3",
     "web3": "^1.0.0-beta.55",
     "web3-react": "next",
-    "webpack": "^4.31.0"
+    "webpack": "^5.94.0"
   },
   "devDependencies": {
     "babel-eslint": "^9.0.0",
